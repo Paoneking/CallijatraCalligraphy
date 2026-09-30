@@ -5,15 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Callijatra Calligraphy</title>
 <meta name="description" content="Privacy policy for Callijatra Calligraphy. Your drawings stay on your device; the app sends only crash reports, through Firebase Crashlytics.">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#EBE4D8">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#fbf9f5; --panel:#ffffff; --fg:#191713; --muted:#6b655c;
-    --rule:#e6e0d5; --accent:#8c1f22; --accent-soft:#f6ecec; --shadow:0 1px 2px rgba(25,23,19,.06);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#111319; --panel:#171a21; --fg:#e9e5dd; --muted:#9a948a;
-            --rule:#252932; --accent:#f4c25a; --accent-soft:#221f18; --shadow:none; }
+    /* Callijatra's default Paper theme (canvas_palette.dart, paperLight). */
+    --bg:#EBE4D8; --panel:#FFFDF5; --fg:#2C1F1A; --muted:#6B5445;
+    --rule:#E2D9C8; --accent:#C0392B; --accent-soft:#EFE8DA; --sunken:#F7F2EA;
+    --shadow:0 1px 2px rgba(44,31,26,.05), 0 10px 30px rgba(44,31,26,.07);
+    --display:"Tiro Devanagari Hindi", Georgia, "Times New Roman", serif;
   }
   *,*::before,*::after { box-sizing:border-box; }
   html { -webkit-text-size-adjust:100%; }
@@ -22,17 +26,25 @@
     font:17px/1.7 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
     -webkit-font-smoothing:antialiased; padding:0 20px;
   }
-  .wrap { max-width:44rem; margin:0 auto; padding:0 0 88px; }
+  .wrap {
+    max-width:46rem; margin:40px auto 56px; padding:0 48px 56px;
+    background:var(--panel); border:1px solid var(--rule); border-radius:18px;
+    box-shadow:var(--shadow);
+  }
 
-  header { padding:64px 0 34px; border-bottom:1px solid var(--rule); margin-bottom:38px; }
-  .mark { color:var(--fg); display:block; width:150px; height:auto; margin-bottom:22px; opacity:.92; }
-  .mark svg { width:100%; height:auto; display:block; }
-  h1 { font-size:clamp(1.7rem,1.3rem + 1.6vw,2.3rem); line-height:1.15; margin:0 0 .5rem; letter-spacing:-.015em; }
+  header { padding:52px 0 32px; border-bottom:1px solid var(--rule); margin-bottom:38px; }
+  .brand { display:flex; align-items:center; gap:16px; margin-bottom:26px; }
+  .brand img { width:64px; height:64px; border-radius:15px; display:block;
+    box-shadow:0 1px 2px rgba(44,31,26,.12), 0 6px 16px rgba(44,31,26,.12); }
+  .brand span { font-family:var(--display); font-size:1.35rem; line-height:1.2; color:var(--fg); }
+  .kicker { color:var(--accent); font-size:.74rem; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; margin:0 0 .45rem; }
+  h1 { font-family:var(--display); font-weight:400; font-size:clamp(2rem,1.5rem + 1.8vw,2.7rem); line-height:1.1; margin:0 0 .6rem; }
   .sub { color:var(--muted); font-size:.95rem; margin:0; }
   .sub b { color:var(--fg); font-weight:600; }
 
   .summary {
-    background:var(--panel); border:1px solid var(--rule); border-left:3px solid var(--accent);
+    background:var(--sunken); border:1px solid var(--rule); border-left:3px solid var(--accent);
     border-radius:10px; padding:22px 24px; margin:0 0 42px; box-shadow:var(--shadow);
   }
   .summary p { margin:0 0 .85rem; }
@@ -40,7 +52,7 @@
   .summary strong { font-weight:650; }
 
   h2 {
-    font-size:1.12rem; letter-spacing:-.005em; margin:2.9rem 0 .8rem;
+    font-family:var(--display); font-weight:400; font-size:1.45rem; margin:2.8rem 0 .7rem;
     padding-top:.2rem;
   }
   h2:first-of-type { margin-top:0; }
@@ -70,9 +82,10 @@
   footer a { color:var(--muted); }
 
   @media (max-width:520px) {
-    body { font-size:16px; padding:0 18px; }
-    header { padding:44px 0 26px; }
-    .mark { width:118px; }
+    body { font-size:16px; padding:0; }
+    .wrap { margin:0; padding:0 20px 44px; border:none; border-radius:0; box-shadow:none; }
+    header { padding:36px 0 26px; }
+    .brand img { width:56px; height:56px; border-radius:13px; }
     .summary { padding:18px 18px; }
     th,td { padding:10px 10px; }
   }
@@ -82,9 +95,9 @@
 <div class="wrap">
 
 <header>
-  <span class="mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-53 -681 1794 693" role="img" aria-label="Newah in Nepal Lipi"><path d="M365 0V-324Q335 -339 284 -339Q250 -339 219.5 -333.0Q189 -327 166 -315Q175 -303 180.5 -287.5Q186 -272 186 -255Q186 -217 162.0 -190.5Q138 -164 103 -164Q68 -164 44.0 -191.0Q20 -218 20 -256Q20 -304 55.5 -338.5Q91 -373 152.0 -391.5Q213 -410 288 -410Q331 -410 365 -401V-600H446V0ZM585 -651Q554 -598 505.0 -574.5Q456 -551 403 -551Q359 -551 326.5 -566.5Q294 -582 274 -610Q251 -581 212.0 -566.0Q173 -551 127 -551Q69 -551 23.5 -574.0Q-22 -597 -53 -650L4 -681Q24 -650 55.0 -634.5Q86 -619 120 -619Q160 -619 192.0 -636.0Q224 -653 245 -675H305Q354 -619 418 -619Q453 -619 477.5 -635.0Q502 -651 524 -681ZM869 -178Q859 -168 844.0 -155.0Q829 -142 803.5 -133.0Q778 -124 737 -124Q684 -124 649.0 -146.0Q614 -168 597.0 -203.5Q580 -239 580 -279Q580 -338 605.5 -378.5Q631 -419 673.0 -444.0Q715 -469 766.0 -481.5Q817 -494 869.0 -496.0Q921 -498 965 -492V-551H526V-622H1136V-551H1046V0H965V-188Q948 -199 933.0 -208.0Q918 -217 912 -217Q901 -217 893.0 -206.0Q885 -195 869 -178ZM662 -282Q662 -239 685.0 -215.5Q708 -192 748 -192Q785 -192 807.0 -210.0Q829 -228 842 -241Q859 -258 871.0 -271.5Q883 -285 905 -285Q917 -285 933.5 -278.5Q950 -272 965 -264V-428Q914 -435 861.0 -431.0Q808 -427 763.0 -410.0Q718 -393 690.0 -361.5Q662 -330 662 -282ZM1176 0V-551H1126V-622H1347V-551H1257V0ZM1630 -322 1656 -295Q1687 -264 1709.5 -227.5Q1732 -191 1732 -137Q1732 -67 1688.0 -27.5Q1644 12 1574 12Q1504 12 1460.5 -24.5Q1417 -61 1417 -121Q1417 -162 1438.5 -202.5Q1460 -243 1507 -294L1530 -319L1518 -332Q1495 -359 1474.0 -383.5Q1453 -408 1440.5 -437.5Q1428 -467 1428 -507Q1428 -545 1445.0 -577.0Q1462 -609 1497.5 -628.5Q1533 -648 1586 -648Q1658 -648 1699.5 -611.5Q1741 -575 1741 -523Q1741 -475 1716.0 -432.5Q1691 -390 1654 -349ZM1565 -390 1580 -375 1592 -388Q1634 -433 1647.5 -462.5Q1661 -492 1661 -516Q1661 -542 1641.0 -559.0Q1621 -576 1589 -576Q1557 -576 1532.5 -558.5Q1508 -541 1508 -500Q1508 -469 1524.0 -443.0Q1540 -417 1565 -390ZM1571 -59Q1609 -59 1630.5 -79.5Q1652 -100 1652 -137Q1652 -170 1633.5 -197.5Q1615 -225 1592 -250L1579 -264L1564 -247Q1497 -171 1497 -123Q1497 -100 1514.0 -79.5Q1531 -59 1571 -59Z" fill="currentColor"/></svg></span>
+  <div class="brand"><img src="icon.png" alt="Callijatra Calligraphy app icon" width="64" height="64"><span>Callijatra Calligraphy</span></div>
   <h1>Privacy Policy</h1>
-  <p class="sub"><b>Callijatra Calligraphy</b> · Callijatra Foundation · Effective 30 September 2026</p>
+  <p class="sub"><b>Callijatra Foundation</b> · Effective 30 September 2026</p>
 </header>
 
 <div class="summary">
