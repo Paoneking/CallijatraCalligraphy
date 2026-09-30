@@ -91,8 +91,8 @@
   <p><strong>Callijatra Calligraphy does not collect your drawings, your writing or any personal data.</strong></p>
   <p>There are no accounts, no advertising and no analytics. What you draw stays on your device
   unless you choose to export or share it yourself.</p>
-  <p>The one thing that ever leaves the app is a crash report, sent to Google&rsquo;s Firebase
-  Crashlytics if the app crashes, so the fault can be found and fixed.</p>
+  <p>The one thing that ever leaves the app is an error report, sent to Google&rsquo;s Firebase
+  Crashlytics when the app crashes or hits an unexpected error, so the fault can be found and fixed.</p>
 </div>
 
 <h2>What the app stores on your device</h2>
@@ -110,16 +110,17 @@
 data in Android settings, or by uninstalling. Removing the app removes everything it stored.</p>
 
 <h2>Exporting and sharing</h2>
-<p>When you export a drawing, the app saves an image to your gallery or hands it to the app you
-choose in Android&rsquo;s share sheet. Where it goes from there is up to you and that app.
-Callijatra Calligraphy does not upload it anywhere.</p>
+<p>When you export a drawing, the app saves the file to your gallery or to a folder on your device
+that your file manager can open, or hands it to the app you choose in Android&rsquo;s share sheet.
+Where it goes from there is up to you and that app. Callijatra Calligraphy does not upload it
+anywhere.</p>
 
-<h2>If the app crashes</h2>
-<p>When the released app crashes it sends a crash report to
+<h2>If the app crashes or hits an error</h2>
+<p>When the released app crashes, or runs into an error it did not expect, it sends a report to
 <a href="https://firebase.google.com/support/privacy">Firebase Crashlytics</a>, a Google service,
 so the fault can be diagnosed. A report contains:</p>
 <ul>
-  <li>the error and a stack trace from the app&rsquo;s own code;</li>
+  <li>the error and a stack trace showing where in the app it happened;</li>
   <li>the app version, the device model, the Android version and the device&rsquo;s state at the
     moment of the crash (for example, free memory and orientation);</li>
   <li>a random installation identifier created by Firebase, which is not linked to your name,
@@ -127,19 +128,20 @@ so the fault can be diagnosed. A report contains:</p>
 </ul>
 <p>A report never contains your drawings, anything you have written, pictures you imported or
 your contacts. The app does not attach a user identifier or any custom data to a report.
-Google keeps Crashlytics reports for 90 days. Only fatal crashes are reported.</p>
+Google keeps Crashlytics reports for 90 days. Development builds report nothing.</p>
 
 <h2>Permissions, and why each exists</h2>
 <ul>
-  <li><strong>Photos</strong> (<code>READ_MEDIA_IMAGES</code>) — to let you pick a picture from
-    your gallery to trace over. Only the picture you choose is read.</li>
   <li><strong>Storage, Android 9 and older only</strong> (<code>WRITE_EXTERNAL_STORAGE</code>) —
     to save an exported drawing to your gallery. Newer versions of Android do not need it and
     the app does not ask for it there.</li>
   <li><strong>Internet</strong> (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>) — used
-    only to send crash reports. The app downloads nothing and works fully offline.</li>
+    only by Crashlytics, to send error reports and fetch its own settings. Everything you do in the
+    app works fully offline.</li>
 </ul>
-<p class="note">The app does not request location, camera, microphone, contacts or phone
+<p>To trace over a picture you choose it in Android&rsquo;s own photo picker, which hands the app
+only that one picture. The app has no permission to read your photo library.</p>
+<p class="note">The app does not request photos, location, camera, microphone, contacts or phone
 permissions.</p>
 
 <h2>Links</h2>
