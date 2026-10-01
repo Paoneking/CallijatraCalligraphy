@@ -80,6 +80,11 @@
     color:var(--muted); font-size:.92rem;
   }
   footer a { color:var(--muted); }
+  .credits { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 40px; }
+  .credit { display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--muted); }
+  .credit span { font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
+  .credit img { display:block; height:auto; }
+  a.credit:hover img { opacity:.8; }
 
   @media (max-width:520px) {
     body { font-size:16px; padding:0; }
@@ -174,8 +179,16 @@ effective date.</p>
 <a href="mailto:paoneking@gmail.com">paoneking@gmail.com</a></p>
 
 <footer>
-  Callijatra Calligraphy is made by
-  <a href="https://callijatra.github.io/">Callijatra Foundation</a>.
+  <div class="credits">
+    <a class="credit" href="https://callijatra.github.io/">
+      <span>Made by</span>
+      <img src="callijatra-foundation.png" alt="Callijatra Foundation" width="109" height="48">
+    </a>
+    <div class="credit">
+      <span>Supported by</span>
+      <img class="partner" src="global-greengrants-fund.svg" alt="Global Greengrants Fund" width="152" height="23">
+    </div>
+  </div>
 </footer>
 
 </div>
